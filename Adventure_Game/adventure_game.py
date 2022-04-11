@@ -143,8 +143,8 @@ def explore():
 
 
 def fight_or_run():
-    second_choice = valid_input("Would you like to (1) fight or (2) run away? "
-                               ,['1', '2'])
+    second_choice = valid_input("Would you like to (1) fight or (2) run "
+                                "away? ", ['1', '2'])
     if second_choice == '1':
         if 'stick' in weapons:
             win_fight()
