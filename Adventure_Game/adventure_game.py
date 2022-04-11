@@ -2,7 +2,7 @@ import random
 import time
 
 
-animals = random.choice(["lion", "tiger", "bear", "cheetah"])
+animals = random.choice(['lion', 'tiger', 'bear', 'cheetah'])
 animal = random.choice(animals)
 animal_possessive = animal + "'s"
 weapons = []
@@ -29,12 +29,12 @@ def forest_first_time():
 
 def options():
     decision = valid_input("Enter 1 to explore the forest.\n"
-                         "Enter 2 to go to the shack.\n"
-                         "What would you like to do?\n"
-                         "(Please enter 1 or 2.) ", ["1", "2"])
-    if decision == "1":
+                           "Enter 2 to go to the shack.\n"
+                           "What would you like to do?\n"
+                           "(Please enter 1 or 2.) ", ['1', '2'])
+    if decision == '1':
         explore()
-        if "stick" in weapons:
+        if 'stick' in weapons:
             forest_already_visited()
         else:
             forest_first_time()
@@ -44,8 +44,8 @@ def options():
 
 def play_game():
     print_pause("You find yourself standing in the wilderness.")
-    print_pause(f"Rumor has it that a {animal} is somewhere around here, and "
-                "is vicious!")
+    print_pause(f'Rumor has it that a {animal} is somewhere around here, and '
+                'is vicious!')
     print_pause("In front of you is a forest.")
     print_pause("To your right is a shack.")
     print_pause("In your hand you hold a flashlight that you found nearby.")
@@ -58,15 +58,14 @@ def print_pause(prompt):
 
 
 def valid_input(prompt, options):
-    choice = input(prompt).lower()
-    if choice in options:
-        return choice
-    else:
-        print_pause("Sorry, I don't understand.")
-        valid_input(prompt, options)
-        
+    while True:
+        choice = input(prompt).lower()
+        if choice in options:
+            return choice
+        print_pause(f'Sorry, the option "{option}" is invalid. Try again!')
 
-def shack():    
+
+def shack():
     print_pause("You go to the shack. Luckily, you don't seem to have "
                 "been followed.")
     print_pause("In the shack, you find a map of the forest and "
@@ -77,12 +76,12 @@ def shack():
 
 def alternate_options():
     alternate_choice = valid_input("Would you like to search for resources? "
-                                   "(y/n) ", ["y", "yes", "yep", "yup", "n", "no"])
-    if alternate_choice[0] == "y":
+                                   "(y/n) ", ['y', 'n'])
+    if alternate_choice[0] == 'y':
         forest_first_time()
-        if "stick" in weapons:
+        if 'stick' in weapons:
             forest_already_visited()
-    elif alternate_choice == "n" or alternate_choice == "no":
+    else:
         explore()
 
 
@@ -95,48 +94,48 @@ def forest_already_visited():
 
 
 def win_fight():
-    if "stick" in weapons:
-        print_pause(f"As the {animal} movs to attack, you unsheath your new "
-                    "stick.")
+    if 'stick' in weapons:
+        print_pause(f'As the {animal} movs to attack, you unsheath your new '
+                    'stick.')
         print_pause("The stick is held firmly in your hand as you "
                     "brace yourself for the attack.")
-        print_pause(f"But the {animal} takes one look at the stick "
-                    "and runs away.")
-        print_pause(f"You have rid the town of the {animal}. You are "
-                    "victorious!")
+        print_pause(f'But the {animal} takes one look at the stick '
+                    'and runs away.')
+        print_pause(f'You have rid the town of the {animal}. You are '
+                    'victorious!')
         play_again()
     else:
         defeated(animal)
 
 
-def play_again():  
-    decision = valid_input("Would you like to play again? (y/n) ", ["y", "yes", "yep", "yup", "n", "no"])
-    if decision[0] == "y":
+def play_again():
+    decision = valid_input("Would you like to play again? (y/n) ", ['y', 'n'])
+    if decision[0] == 'y':
         print_pause("Excellent! Restarting the game...")
         global animal, animal_possessive, weapons
         animal = random.choice(animals)
         animal_possessive = animal + "'s"
         weapons = []
         play_game()
-    elif decision == "n" or decision == "no":   
+    else:
         print_pause("Thanks for playing! See you next time.")
         quit()
 
-        
+
 def defeated():
-    print_pause("You do your best...\nbut your flashlight is no match for "
-                f"the {animal}.")
+    print_pause('You do your best...\nbut your flashlight is no match for '
+                f'the {animal}.')
     print_pause("You have been defeated!")
 
 
 def explore():
     print_pause("You listen for sounds, watch for movement, and decide to go "
                 "into the forest.")
-    print_pause("All the sudden, you see a pair of eyes. As it walks toward "
-                f"you, you notice it is a {animal}.")
-    print_pause(f"Eep! This is the {animal_possessive} territory!")
-    print_pause(f"The {animal} gets closer to you!")
-    if "stick" in weapons:
+    print_pause('All the sudden, you see a pair of eyes. As it walks toward '
+                f'you, you notice it is a {animal}.')
+    print_pause(f'Eep! This is the {animal_possessive} territory!')
+    print_pause(f'The {animal} gets closer to you!')
+    if 'stick' in weapons:
         fight_or_run()
     else:
         defeated()
@@ -144,10 +143,10 @@ def explore():
 
 
 def fight_or_run():
-    second_choice = valid_input("Would you like to (1) fight or (2) run away? ",
-                                ["1", "2"])
-    if second_choice == "1":
-        if "stick" in weapons:
+    second_choice = valid_input("Would you like to (1) fight or (2) run away? "
+                               ,['1', '2'])
+    if second_choice == '1':
+        if 'stick' in weapons:
             win_fight()
         else:
             print_pause("You feel a bit under-prepared for this, what with "
