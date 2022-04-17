@@ -15,13 +15,15 @@ def organize_photos(directory):
         # Append place name to places variable
         places.append(place)
 
+    make_place_directories(places)
+
 # Make directories based on places variable 
 def make_place_directories(places):
     # Use places variable to make directories
     for place in places:
         os.mkdir(place)
 
-    make_place_directories(places)
+    
 
     # Extract places names and move filename into respective folder 
     for filename in originals:
