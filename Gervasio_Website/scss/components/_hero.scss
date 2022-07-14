@@ -1,0 +1,15 @@
+@use '../abstracts/variables';
+
+
+%hero {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero { 
+    @extend %hero;
+}

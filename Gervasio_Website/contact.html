@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="./scss/base/normalize.css">
+    <link rel="text/html" href="index.html">
+    <link rel="text/html" href="about.html">
+    <link rel="text/html" href="portfolio.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Raleway:wght@100;200&display=swap" rel="stylesheet"> 
+    <title>Contact</title>
+</head>
+<body id="contact-page">
+    <nav class="navbar" id="contact-navbar">
+        <a href="index.html" class="btn" id="logo">GG</a>
+        <ul>
+            <li>
+                <a href="index.html" class="btn" id="home">Home</a>
+                <a href="about.html" class="btn" id="about">About</a>
+                <a href="portfolio.html" class="btn" id="portfolio">Portfolio</a>
+                <a href="contact.html" class="btn" id="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="form">
+        <form action="mailto:ggervasio117@gmail.com" id="form" method="POST">
+            <label for="first-name">First Name:</label>
+            <input type="text" for="first-name" id="first-name">
+            <label for="last-name">Last Name:</label>
+            <input type="text" for="last-name" id="last-name">
+            <label for="email">Email:</label>
+            <input type="email" for="email" id="email">
+            <label for="Message">Message:</label>
+            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <button class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

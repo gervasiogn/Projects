@@ -1,0 +1,22 @@
+@use '../layout/grid';
+@use '../abstracts/variables';
+@use '../base/typography';
+@use '../components/buttons';
+
+#portfolio-page {
+    background: #333;
+    
+    .grid { 
+        @include grid.grid(repeat(auto-fit, minmax(100px, 1fr)), auto);
+    }
+
+    p {
+        color: #fff;
+        padding: 0 3rem;
+        font-size: 1.3rem;
+        // height: 10vmax;
+        width: 48vmax;
+        margin: 0 auto;
+    }
+}
+

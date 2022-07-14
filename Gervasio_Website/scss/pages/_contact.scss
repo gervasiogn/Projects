@@ -1,0 +1,31 @@
+@use '../abstracts/variables';
+@use '../base/typography';
+@use '../layout/navigation';
+@use '../components/buttons';
+
+#contact-page {
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+#contact-navbar {
+    background: #333;
+
+    ul li a {
+        font-family: variables.$primary-font;
+    }
+    
+} 
+
+@media screen and (max-width: 768px) {
+   #contact-navbar {
+       @extend %vertical-navbar;
+   } 
+
+}
+
+@media screen and (min-width: 769px) {
+    form {
+        padding: 3rem;
+    }
+}

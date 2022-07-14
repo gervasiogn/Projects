@@ -1,0 +1,38 @@
+@use '../abstracts/variables';
+
+.submit-btn {
+    margin: 2rem auto;
+    padding: .7rem .5rem;
+}
+
+.btn {
+    padding: .5rem 1rem;
+    border: 0;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: variables.$light-color;
+
+    &:hover {
+        background: variables.$medium-color;
+        transition: all .5s ease;
+        color: variables.$primary-color;
+        cursor: pointer;
+    }
+}
+
+// Make this a dropdown menu
+ #logo {
+    font-size: 1.5rem;
+    font-weight: 900;   
+    border: 3px solid variables.$primary-color;
+    margin: .7rem auto;
+}
+
+.navbar {
+
+    ul li {
+        list-style: none;
+    }
+}
+
+

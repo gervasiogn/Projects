@@ -1,0 +1,67 @@
+@use '../abstracts/variables';
+@use '../base/typography';
+@use '../components/buttons';
+
+#homepage {
+    background: url('../../web-5.jpg') no-repeat center center/cover;
+    height: 100vh;
+    width: 100vw;
+    color: variables.$light-color;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #333;
+        opacity: .9;
+        z-index: -1;
+    } 
+}
+
+.home-hero {
+    h1 {
+        opacity: 0;
+        animation: main-heading 1.2s forwards ease-in;
+    }
+
+    h2 {
+        opacity: 0;
+        animation: second-heading 1.2s forwards .7s ease-in;
+    }
+}
+
+@keyframes main-heading {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes second-heading {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-hero {
+        margin-top: 1.5rem;
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    .home-hero {
+        margin-top: 5rem;
+        font-size: 1.5rem;
+    }
+}
